@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+
+{% for reservation in reservation %}
+    <article>
+        <h2>{{ reservation.id }}</h2>
+        <a href="{{ path('reservation_update', {'id': reservation.id}) }}">Modifier la réservation"</a>
+        <a href="{{ path('reservation_delete', {'id': reservation.id}) }}">Supprimer la réservation"</a>
+    </article>
+{% endfor %}
+
+<div>
+    <a href="{{ path('reservation_create') }}">Enregistrer une nouvelle réservation</a>
+</div>
+
+{% endblock main %}

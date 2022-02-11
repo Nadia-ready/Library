@@ -14,6 +14,22 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="{{ path('books_list') }}">Liste des livres</a></li>
+                    <li><a href="{{ path('reservation_list') }}">Liste des réservations</a></li>
+                    <li><a href="{{ path('app_logout') }}">Deconnexion</a></li>
+                    <li>{{ app.user.lastname }} {{ app.user.firstname}} est connecté</li>
+
+
+                </ul>
+            </nav>
+        </header>
+
+    <main>
+        {% block main %}
+        {% endblock main %}
+    </main>
     </body>
 </html>

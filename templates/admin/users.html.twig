@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+
+{% for user in users %}
+    <article>
+        <h2>{{ user.lastname }}</h2>
+        <a href="{{ path('users_update', {'id': user.id}) }}">Modifier l'utilisateur"</a>
+        <a href="{{ path('users_delete', {'id': user.id}) }}">Supprimer l'utilisateur'"</a>
+    </article>
+{% endfor %}
+
+<div>
+    <a href="{{ path('users_create') }}">Créer un nouvel utilisateur</a>
+</div>
+
+{% endblock main %}

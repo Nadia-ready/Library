@@ -1,0 +1,18 @@
+
+{% extends 'base.html.twig' %}
+
+{% block main %}
+
+{% for book in books %}
+    <article>
+        <h2>{{ book.title }}</h2>
+        <a href="{{ path('books_update', {'id': book.id}) }}">Modifier le livre"</a>
+        <a href="{{ path('books_delete', {'id': book.id}) }}">Supprimer le livre"</a>
+    </article>
+{% endfor %}
+
+<div>
+    <a href="{{ path('books_create') }}">Enregistrer un nouveau livre</a>
+</div>
+
+{% endblock main %}
