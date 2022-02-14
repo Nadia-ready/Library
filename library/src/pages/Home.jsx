@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import Header from "../component/Header";
 
 function Home() {
 
     return (
-    <main>
-      <h1>Nos livres</h1>
-    </main>
+      <>
+        <Header color="yellow"/>
+        <main>
+          <h1>Bienvenue dans notre médiathèque</h1>
+        </main>
+      </>
     
   );
 }

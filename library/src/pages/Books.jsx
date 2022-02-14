@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Header from "../component/Header";
 
 function Books() {
 
@@ -27,17 +28,26 @@ function Books() {
 
 
   return (
-    <main>
-      <h1>Nos livres</h1>
+    <>
+    <Header />
+      <main>
+        <h1>Nos livres</h1>
+          <div>
+            {book.length >0 ?
+              <>
+                {book.map(books => {
+                  return(
+                    <h2>{books.title}</h2>
+                  );
+                })}
+              </>
+              :
+                <p>Loading</p>
+            }
+          </div>
 
-      {book.map(books => {
-        return(
-          <h2>{books.title}</h2>
-        )
-      })};
-
-    </main>
-    
+      </main>
+    </>
   );
 }
 

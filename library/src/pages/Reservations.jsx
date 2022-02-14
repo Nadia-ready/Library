@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Header from "../component/Header";
 
 function Reservations() {
 
@@ -27,17 +28,19 @@ function Reservations() {
 
 
   return (
-    <main>
-      <h1>Liste des réservations</h1>
+    <>
+      <Header />
+      <main>
+        <h1>Liste des réservations</h1>
 
-      {reservations.map(Reservation => {
-        return(
-          <h2>{Reservation.id}</h2>
-        )
-      })};
+        {reservations.map(Reservation => {
+          return(
+              <h2>{Reservation.id}</h2>
+          )
+        })};
 
-    </main>
-    
+      </main>
+    </>
   );
 }
 
