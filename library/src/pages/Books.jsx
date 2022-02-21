@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Header from "../component/Header";
 
 function Books() {
 
@@ -29,7 +28,6 @@ function Books() {
 
   return (
     <>
-    <Header />
       <main>
         <h1>Nos livres</h1>
           <div>

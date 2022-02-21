@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Header from "../component/Header";
 
 function Reservations() {
 
@@ -29,7 +28,6 @@ function Reservations() {
 
   return (
     <>
-      <Header />
       <main>
         <h1>Liste des réservations</h1>
 
