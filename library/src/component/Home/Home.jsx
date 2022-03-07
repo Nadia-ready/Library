@@ -1,54 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { Form } from "react-bootstrap";
+import ButtonSend from "../Style/ButtonSend";
 
 function Home() {
-
-  const [user, setUser] = useState([]);
-
-  useEffect(() => {
-    
-
-    (async function() {
-
-      const url = "http://localhost/api/users";
-
-      const response = await fetch(url, {
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-  
-      const usersFromApi = await response.json();
-
-      setUser(usersFromApi);
-
-    })(); 
-
-  }, []);
 
     return (
       <>
         <main>
           <h1>Bienvenue dans notre médiathèque</h1>
-          <div>
-            {user.length > 0 ?
-            <>
-              {user.map(users => {
-                return(
-                  <h2>{users.lastname}</h2>
-                );
-              })}
-            </>
-            :
-              <p>Loading</p>
-          }
-          </div>
+          <h2>Veuillez vous connecter</h2>
 
-          <form>
-            <label>
-              <input type="text" name="name" />
-            </label>
-              <input type="submit" value="envoyer" />
-          </form>
+          <Form>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email</Form.Label>
+                <Form.Control type="email" placeholder="Renseigner votre e-mail" />
+                <Form.Text className="text-muted">
+                  Nous ne partageons pas votre mail.
+                </Form.Text>
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Mot de passe</Form.Label>
+                <Form.Control type="password" placeholder="Mot de passe" />
+              </Form.Group>
+              <ButtonSend />
+          </Form>
+
         </main>
       </>
     
